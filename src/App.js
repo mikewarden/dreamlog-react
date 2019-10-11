@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import DreamForm from './DreamForm';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dragula from 'react-dragula';
 import Button from '@material-ui/core/Button';
 
@@ -32,10 +33,14 @@ class App extends React.Component {
 
   render() {
     let dreamArray = this.props.data.map((item) => {
-      return <div  key={item.id} className="list-container"><div className="item-container"><strong>Title:</strong> {item.title} <br/> <strong>Description:</strong> {item.body} <br/> <strong>Date:</strong> {item.date}  <br/><button onClick={() => this.handleDeleteClick(item.id)} className="delete-btn">Delete</button><button className="edit-btn">Edit</button> <br/></div><br/></div>
-    });
+      return (<div  key={item.id} className="list-container"><div className="item-container"><strong>Name:</strong> {item.name} <br/><hr/><strong>Title:</strong> {item.title} <br/> <hr/><strong>Description:</strong> {item.body} <br/><hr/> <strong>Date:</strong> {item.date} <br/></div><br/></div>
+      	)
+    })
+
+    
 
   return (
+  	
     <div className="App">
       <h1>DreamLog</h1>
         <div id="container"><div className='container' ref={this.dragulaDecorator}>{dreamArray}</div>

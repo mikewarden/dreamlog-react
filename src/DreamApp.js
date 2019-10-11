@@ -37,28 +37,32 @@ class DreamApp extends React.Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">Show Dreams</Link>
+              <Link id="show_dreams" className="nav-item" to="/">All Dreams</Link>
             </li>
             <li>
-              <Link to="/create">Create Dream</Link>
+              <Link id="create_dream" className="nav-item" to="/create">Add New Dream</Link>
             </li>
-            <li>
-              <Link to="/update">Update Dream</Link>
-            </li>
+            
           </ul>
         </nav>
-
+        <div id="content_body">
         <Switch>
-          <Route path="/update">
-            <DreamForm action="update" getDataFromAPI={this.getDataFromAPI} />
-          </Route>
+          <Route path="/dream/:id" render={(props)=> (
+                        <App {...props} getDataFromAPI={this.getDataFromAPI}/>
+                      )}/>
+                      <Route path="/dream/:id" render={(props)=> (
+                        <DreamForm {...props} getDataFromAPI={this.getDataFromAPI} />
+                      )} />
+
+          
           <Route path="/create">
-            <DreamForm action="create" getDataFromAPI={this.getDataFromAPI} />
+            <DreamForm getDataFromAPI={this.getDataFromAPI} />
           </Route>
           <Route exact path="/">
             <App getDataFromAPI={this.getDataFromAPI} data={this.state.data}/>
           </Route>
         </Switch>
+        </div>
       </div>
     </Router>
   );

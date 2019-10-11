@@ -10,6 +10,7 @@ class DreamForm extends React.Component {
   constructor() {
     super();
     this.state = {
+      name: "",
       title: "",
       body: "",
       date: "",
@@ -19,6 +20,11 @@ class DreamForm extends React.Component {
       isStrange: false,
       isVivid: false
     }
+  }
+
+  onNameInput = (event) => {
+    this.setState({name: event.target.value})
+    console.log("Name: " + event.target.value);
   }
 
   onTitleInput = (event) => {
@@ -69,6 +75,7 @@ class DreamForm extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
+        name: this.state.name,
         title: this.state.title, 
         body: this.state.body,
         date: this.state.date,
@@ -84,55 +91,19 @@ class DreamForm extends React.Component {
     window.location.reload();
   }
 
-  handleUpdateClick = (event) => {
-
-    fetch('http://localhost:8080/dream' + this.state.id, {
-      method: 'put',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        title: this.state.title, 
-        body: this.state.body,
-        date: this.state.date,
-        isLucid: this.state.isLucid,
-        isNightmare: this.state.isNightmare,
-        isRecurring: this.state.isRecurring,
-        isStrange: this.state.isStrange,
-        isVivid: this.state.isVivid
-      })
-    }).then(() => {
-      this.props.getDataFromAPI();
-
-      this.setState({
-      title: "",
-      body: "",
-      date: "",
-      isLucid: false,
-      isNightmare: false,
-      isRecurring: false,
-      isStrange: false,
-      isVivid: false
-      })
-    })
-    window.location.reload();
-  }
+  
 
   render() {
 
-    // let idInput = "";
-    // let buttonAction;
-    // if(this.props.action === "update"){
-    //   idInput = <input type="number" value={this.state.id} onInput={this.onIdInput} placeholder="ID of Dream"/>
-    //   buttonAction = <button className="submit-btn" onClick={this.handleUpdateClick}>Update Dream</button>
-    // } else if (this.props.action === "create") {
-    //   buttonAction = <button className="submit-btn" onClick={this.handleCreateClick}>Add new Dream</button>
+  
     return (
 
       <div className="form">
       {/*{ idInput }*/}
       <h3>Log a new Dream</h3>
-        <TextField id="outlined-name" label="Title" className="" onInput={this.onTitleInput} margin="normal" variant="outlined" />
+        <TextField id="outlined-name" label="Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
+        <br/>
+        <TextField id="outlined-name" label="Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />
         <br/>
         <TextField id="outlined-name" label="Description" className="" onInput={this.onBodyInput} margin="normal" variant="outlined" />
         <br/>

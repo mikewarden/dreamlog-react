@@ -19,7 +19,7 @@ class DreamApp extends React.Component {
     }
   }
   getDataFromAPI=()=>{
-    fetch("http://localhost:8080/dreams")
+    fetch("https://tranquil-harbor-57348.herokuapp.com")
     .then((res) => res.json())
     .then((response)=>{
       this.setState({data:response});

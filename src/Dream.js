@@ -10,7 +10,7 @@ class Dream extends React.Component {
   }
   componentDidMount(){
     const { id } = this.props.match.params;
-    fetch("http://localhost:8080/dream/" + id)
+    fetch("https://tranquil-harbor-57348.herokuapp.com/dream/" + id)
       .then((res) => res.json())
       .then((dreamRes) =>{
         this.setState({dream:dreamRes});

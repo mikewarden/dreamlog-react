@@ -22,7 +22,7 @@ class App extends React.Component {
 
 
   handleDeleteClick = (id) => {
-    fetch('http://localhost:8080/dream/' + id, {
+    fetch('https://tranquil-harbor-57348.herokuapp.com/dream' + id, {
       method: 'delete',
       }).then(() => {
       this.props.getDataFromAPI();

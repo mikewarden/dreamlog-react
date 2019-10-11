@@ -69,7 +69,7 @@ class DreamForm extends React.Component {
 
   handleCreateClick = (event) => {
     
-    fetch('http://localhost:8080/dream', {
+    fetch('https://tranquil-harbor-57348.herokuapp.com/dream', {
       method: 'post',
       headers: {
         "Content-Type": "application/json"

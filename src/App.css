@@ -161,6 +161,7 @@ hr {
 #dream-profile {
   margin-left: 4%;
   margin-top: 6%;
+  /*margin-right: 4%;*/
 }
 
 .edit-dream {
@@ -181,7 +182,7 @@ hr {
 #dream-body {
   margin-bottom: 5%;
   border: 1px solid #000;
-  margin-right: 20%;
+  margin-right: 4%;
   padding: 2%;
   border-radius: 10px;
   box-shadow: 4px 4px 10px;

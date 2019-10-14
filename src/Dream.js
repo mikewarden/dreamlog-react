@@ -4,6 +4,7 @@ import DreamApp from './DreamApp';
 import './App.css';
 import DreamForm from './DreamForm';
 import Dragula from 'react-dragula';
+import Button from '@material-ui/core/Button';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Dream extends React.Component {
@@ -31,14 +32,20 @@ class Dream extends React.Component {
 
  render(){
     return(
-      <div>
-        <div>Id: {this.state.dream.id}</div>
-        <div>Name: {this.state.dream.name}</div>
-        <div>Title: {this.state.dream.title}</div>
-        <div>Description: {this.state.dream.body}</div>
-        <div>Date: {this.state.dream.date}</div>
-        <Link to="/"><button onClick={()=>this.deleteHandleClick(this.state.dream.id)}>Delete Dream</button></Link>
-        <Link to={"/edit/dream/" + this.state.dream.id}><button>Edit</button></Link>
+      <div id="dream-profile">
+        <div id="dream-body">
+          <div className="dream-profile-data"><strong>Id:</strong> {this.state.dream.id}</div>
+          <hr/>
+          <div className="dream-profile-data"><strong>Name:</strong> {this.state.dream.name}</div>
+          <hr/>
+          <div className="dream-profile-data"><strong>Title:</strong> {this.state.dream.title}</div>
+          <hr/>
+          <div className="dream-profile-data"><strong>Description:</strong> {this.state.dream.body}</div>
+          <hr/>
+          <div className="dream-profile-data"><strong>Date:</strong> {this.state.dream.date}</div>
+        </div>
+        <Link to="/" className="delete-dream"><Button className="submit-btn" onClick={()=>this.deleteHandleClick(this.state.dream.id)} variant="outlined" color="inherit">Delete Dream</Button></Link>
+        <Link to={"/edit/dream/" + this.state.dream.id} className="edit-dream"><Button className="submit-btn" variant="outlined" color="inherit">Edit</Button></Link>
       </div>
     )
   }

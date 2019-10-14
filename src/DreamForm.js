@@ -152,9 +152,9 @@ class DreamForm extends React.Component {
     return (
      <div className="form">
       <h3>Log a new Dream</h3>
-        <TextField id="outlined-name" label="Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
+        <TextField id="outlined-name" label="User Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
         <br/>
-        <TextField id="outlined-name" label="Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />
+        <TextField id="outlined-name" label="Dream Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />
         <br/>
         <TextField id="outlined-name" label="Description" className="" onInput={this.onBodyInput} margin="normal" variant="outlined" />
         <br/>

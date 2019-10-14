@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Dream from './Dream';
 import DreamForm from './DreamForm';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dragula from 'react-dragula';
@@ -21,29 +22,26 @@ class App extends React.Component {
   };
 
 
-  handleDeleteClick = (id) => {
-    fetch('https://tranquil-harbor-57348.herokuapp.com/dream' + id, {
-      method: 'delete',
-      }).then(() => {
-      this.props.getDataFromAPI();
-    })
-  }
-
-
 
   render() {
-    let dreamArray = this.props.data.map((item) => {
-      return (<div  key={item.id} className="list-container"><div className="item-container"><strong>Name:</strong> {item.name} <br/><hr/><strong>Title:</strong> {item.title} <br/> <hr/><strong>Description:</strong> {item.body} <br/><hr/> <strong>Date:</strong> {item.date} <br/></div><br/></div>
+    let dreamArray = this.props.dreams.map((dream) => {
+      return (<Link to={"/dream/" + dream.id}  key={dream.id} className="list-container"><div className="item-container"><strong>Id:</strong> {dream.id} <br/><strong>Name:</strong> {dream.name} <br/><hr/><strong>Title:</strong> {dream.title} <br/> <hr/><strong>Description:</strong> {dream.body} <br/><hr/> <strong>Date:</strong> {dream.date} <br/></div><br/></Link>
       	)
     })
-
+     let messageIfEmpty="";
+    if(dreamArray.length===0){
+      messageIfEmpty = "No dreams found";
+    }
     
 
   return (
+    
   	
     <div className="App">
       <h1>DreamLog</h1>
-        <div id="container"><div className='container' ref={this.dragulaDecorator}>{dreamArray}</div>
+        <div id="container">
+        {messageIfEmpty}
+        <div className='container' ref={this.dragulaDecorator}>{dreamArray}</div>
         </div>
         
     </div>

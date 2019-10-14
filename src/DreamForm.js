@@ -3,13 +3,13 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
-
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class DreamForm extends React.Component {
   constructor() {
     super();
     this.state = {
+      id: 0,
       name: "",
       title: "",
       body: "",
@@ -68,7 +68,6 @@ class DreamForm extends React.Component {
   }
 
   handleCreateClick = (event) => {
-    
     fetch('https://tranquil-harbor-57348.herokuapp.com/dream', {
       method: 'post',
       headers: {
@@ -87,19 +86,72 @@ class DreamForm extends React.Component {
       })
     }).then(() => {
       this.props.getDataFromAPI();
+      this.setState({
+      name: "",
+      title: "",
+      body: "",
+      date: "",
+      isLucid: false,
+      isNightmare: false,
+      isRecurring: false,
+      isStrange: false,
+      isVivid: false,
+      })
     })
-    window.location.reload();
+    
+    // window.location.reload();
   }
 
-  
+  handleUpdateClick = (event) => {
+    
+    fetch('https://tranquil-harbor-57348.herokuapp.com/dream/' + this.state.id, {
+      method: 'put',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        title: this.state.title, 
+        body: this.state.body,
+        date: this.state.date,
+        isLucid: this.state.isLucid,
+        isNightmare: this.state.isNightmare,
+        isRecurring: this.state.isRecurring,
+        isStrange: this.state.isStrange,
+        isVivid: this.state.isVivid
+      })
+    }).then(() => {
+      this.props.getDataFromAPI();
+      this.setState({
+      id:0,
+      name: "",
+      title: "",
+      body: "",
+      date: "",
+      isLucid: false,
+      isNightmare: false,
+      isRecurring: false,
+      isStrange: false,
+      isVivid: false,
+      });
+    })
+    // window.location.reload();
+  }
+
+  componentDidMount(){
+    let id = this.props.match ? this.props.match.params.id : 0;
+    this.setState({ id });
+  }
 
   render() {
-
-  
+    let buttonAction;
+    if( this.state.id ){
+      buttonAction = <Button onClick={this.handleUpdateClick} className="submit-btn" variant="outlined" color="inherit">Update Dream</Button>
+    } else {
+      buttonAction = <Button className="submit-btn" onClick={this.handleCreateClick} variant="outlined" color="inherit">Create Dream</Button>
+    }
     return (
-
-      <div className="form">
-      {/*{ idInput }*/}
+     <div className="form">
       <h3>Log a new Dream</h3>
         <TextField id="outlined-name" label="Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
         <br/>
@@ -123,9 +175,9 @@ class DreamForm extends React.Component {
 
         </div>
         <br/>
-        {/*<button onClick={this.handleCreateClick}className="submit-btn">Submit</button>*/}
-        <Button onClick={this.handleCreateClick}variant="outlined" color="inherit">Submit</Button>
-         {/* <Link to="/">{ buttonAction }</Link>*/}       
+        {/*
+        <Button onClick={this.handleCreateClick}variant="outlined" color="inherit">Submit</Button>*/}
+         <Link to="/" className="submit-btn">{ buttonAction }</Link>     
       </div>
     )
   }

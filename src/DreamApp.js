@@ -1,5 +1,6 @@
 import React from "react";
 import App from './App';
+import Dream from './Dream';
 import './App.css';
 import DreamForm from './DreamForm';
 import Dragula from 'react-dragula';
@@ -15,14 +16,14 @@ class DreamApp extends React.Component {
   constructor(){
     super()
     this.state = {
-      data:[]
+      dreams:[]
     }
   }
   getDataFromAPI=()=>{
     fetch("https://tranquil-harbor-57348.herokuapp.com/dreams")
     .then((res) => res.json())
     .then((response)=>{
-      this.setState({data:response});
+      this.setState({dreams:response});
     });
   }
 
@@ -48,18 +49,16 @@ class DreamApp extends React.Component {
         <div id="content_body">
         <Switch>
           <Route path="/dream/:id" render={(props)=> (
-                        <App {...props} getDataFromAPI={this.getDataFromAPI}/>
+            <Dream {...props} getDataFromAPI={this.getDataFromAPI}/>
                       )}/>
-                      <Route path="/dream/:id" render={(props)=> (
-                        <DreamForm {...props} getDataFromAPI={this.getDataFromAPI} />
+          <Route path="edit/dream/:id" render={(props)=> (
+            <DreamForm {...props} getDataFromAPI={this.getDataFromAPI} />
                       )} />
-
-          
           <Route path="/create">
             <DreamForm getDataFromAPI={this.getDataFromAPI} />
           </Route>
           <Route exact path="/">
-            <App getDataFromAPI={this.getDataFromAPI} data={this.state.data}/>
+            <App getDataFromAPI={this.getDataFromAPI} dreams={this.state.dreams}/>
           </Route>
         </Switch>
         </div>

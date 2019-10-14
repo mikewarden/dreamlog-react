@@ -1,7 +1,7 @@
 body {
-  background: rgb(2,0,36);
-background: rgb(120,113,255);
-background: linear-gradient(90deg, rgba(120,113,255,1) 0%, rgba(223,55,255,1) 0%, rgba(76,218,247,1) 100%);
+ /* background: rgb(2,0,36);*/
+background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 4%, rgba(148,187,233,1) 96%);
 }
 
 h1 {
@@ -56,14 +56,6 @@ h3 {
   margin-right: 5px;*/
 }
 
-.submit-btn {
-  border: 1px solid #000;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 6px;
-  opacity: 0.6;
-  box-shadow: 5px 3px 8px;
-}
 
 .radio-inputs {
   text-align: center;
@@ -145,4 +137,9 @@ hr {
   /*border: 0.7px solid #000;*/
   opacity: 0.3;
   border-color: #000;
+}
+
+.submit-btn {
+  text-decoration: none;
+  color: #000;
 }

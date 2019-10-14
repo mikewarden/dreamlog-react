@@ -51,9 +51,9 @@ class DreamApp extends React.Component {
           <Route path="/dream/:id" render={(props)=> (
             <Dream {...props} getDataFromAPI={this.getDataFromAPI}/>
                       )}/>
-          <Route path="edit/dream/:id" render={(props)=> (
+          <Route path="/edit/dream/:id" render={(props)=> (
             <DreamForm {...props} getDataFromAPI={this.getDataFromAPI} />
-                      )} />
+                      )}/>
           <Route path="/create">
             <DreamForm getDataFromAPI={this.getDataFromAPI} />
           </Route>

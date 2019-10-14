@@ -37,7 +37,7 @@ class Dream extends React.Component {
         <div>Title: {this.state.dream.title}</div>
         <div>Description: {this.state.dream.body}</div>
         <div>Date: {this.state.dream.date}</div>
-        <Link to="/dream"><button onClick={()=>this.deleteHandleClick(this.state.dream.id)}>Delete Dream</button></Link>
+        <Link to="/"><button onClick={()=>this.deleteHandleClick(this.state.dream.id)}>Delete Dream</button></Link>
         <Link to={"/edit/dream/" + this.state.dream.id}><button>Edit</button></Link>
       </div>
     )

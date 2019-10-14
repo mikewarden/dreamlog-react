@@ -118,24 +118,23 @@ class DreamForm extends React.Component {
         isNightmare: this.state.isNightmare,
         isRecurring: this.state.isRecurring,
         isStrange: this.state.isStrange,
-        isVivid: this.state.isVivid
+        isVivid: this.state.isVivid,
       })
     }).then(() => {
       this.props.getDataFromAPI();
-      this.setState({
-      id:0,
-      name: "",
-      title: "",
-      body: "",
-      date: "",
-      isLucid: false,
-      isNightmare: false,
-      isRecurring: false,
-      isStrange: false,
-      isVivid: false,
-      });
+      // this.setState({
+      // id:0,
+      // name: "",
+      // title: "",
+      // body: "",
+      // date: "",
+      // isLucid: false,
+      // isNightmare: false,
+      // isRecurring: false,
+      // isStrange: false,
+      // isVivid: false,
+      // });
     })
-    // window.location.reload();
   }
 
   componentDidMount(){

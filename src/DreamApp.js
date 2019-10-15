@@ -8,10 +8,15 @@ import Recurring from './Recurring';
 import Strange from './Strange';
 import Vivid from './Vivid';
 import DreamForm from './DreamForm';
+import SideMenu from './SideMenu';
 import Dragula from 'react-dragula';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
 import bedIcon from './bed.svg';
+
 
 const About=()=>{
   return <h2>About</h2>;
@@ -103,29 +108,34 @@ class DreamApp extends React.Component {
               <img id="bed-icon" src={bedIcon} alt={"Icon"} style={{width: "26px", height: "26px"}}/>
             </li>*/}
             <li>
-              <Link id="show_dreams" className="nav-item" to="/">All Dreams</Link>
+            <SideMenu />
             </li>
             <li>
-             <Link id="show_lucid" className="nav-item" to="/lucid">Lucid Dreams</Link>
+              <Link id="show_dreams" className="nav-item" to="/">ALL DREAMS</Link>
             </li>
+            {/*<li>
+                         <Link id="show_lucid" className="nav-item" to="/lucid">Lucid Dreams</Link>
+                        </li>
+                        <li>
+                         <Link id="show_nightmare" className="nav-item" to="/nightmare">Nightmares</Link>
+                        </li>
+                        <li>
+                         <Link id="show_recurring" className="nav-item" to="/recurring">Recurring Dreams</Link>
+                        </li>
+                        <li>
+                        <Link id="show_strange" className="nav-item" to="/strange">Strange Dreams</Link>
+                        </li>
+                         <li>
+                        <Link id="show_vivid" className="nav-item" to="/vivid">Vivid Dreams</Link>
+                        </li>*/}
             <li>
-             <Link id="show_nightmare" className="nav-item" to="/nightmare">Nightmares</Link>
-            </li>
-            <li>
-             <Link id="show_recurring" className="nav-item" to="/recurring">Recurring Dreams</Link>
-            </li>
-            <li>
-            <Link id="show_strange" className="nav-item" to="/strange">Strange Dreams</Link>
-            </li>
-             <li>
-            <Link id="show_vivid" className="nav-item" to="/vivid">Vivid Dreams</Link>
-            </li>
-            <li>
-              <Link id="create_dream" className="nav-item" to="/create">Add New Dream</Link>
+              <Link id="create_dream" className="nav-item" to="/create">ADD NEW DREAM</Link>
             </li>
             <li></li>
           </ul>
         </nav>
+
+
         <div id="content_body">
         <Switch>
           <Route path="/dream/:id" render={(props)=> (

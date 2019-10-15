@@ -5,6 +5,7 @@ import DreamForm from './DreamForm';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dragula from 'react-dragula';
 import Button from '@material-ui/core/Button';
+import bedIcon from './bed.svg';
 
 class App extends React.Component {
  
@@ -39,6 +40,7 @@ class App extends React.Component {
   	
     <div className="App">
       <h1>DreamLog</h1>
+    
         <div id="container">
         {messageIfEmpty}
         <div className='container' ref={this.dragulaDecorator}>{dreamArray}</div>

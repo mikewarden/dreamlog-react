@@ -33,6 +33,7 @@ class Dream extends React.Component {
  render(){
     return(
       <div id="dream-profile">
+      <h1>DreamLog</h1>
         <div id="dream-body">
           <div className="dream-profile-data"><strong>Id:</strong> {this.state.dream.id}</div>
           <hr/>

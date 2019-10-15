@@ -19,7 +19,12 @@ import bedIcon from './bed.svg';
 
 
 const About=()=>{
-  return <h2>About</h2>;
+  return (
+    <div id="about-container">
+    <h2>About DreamLog</h2>
+    <p>Welcome to DreamLog!</p>
+    </div>
+    )
 }
 
 
@@ -111,6 +116,9 @@ class DreamApp extends React.Component {
             <SideMenu />
             </li>
             <li>
+              <Link id="show_dreams" className="nav-item" to="/about">ABOUT</Link>
+            </li>
+            <li>
               <Link id="show_dreams" className="nav-item" to="/">ALL DREAMS</Link>
             </li>
             {/*<li>
@@ -164,6 +172,9 @@ class DreamApp extends React.Component {
           </Route>
           <Route path="/vivid">
             <Vivid getVivdFromAPI={this.getVividFromAPI} vivid={this.state.vivid}/>
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
         </Switch>
         </div>

@@ -2,6 +2,11 @@ import React from "react";
 import App from './App';
 import Dream from './Dream';
 import './App.css';
+import Lucid from './Lucid';
+import Nightmare from './Nightmare';
+import Recurring from './Recurring';
+import Strange from './Strange';
+import Vivid from './Vivid';
 import DreamForm from './DreamForm';
 import Dragula from 'react-dragula';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -17,9 +22,15 @@ class DreamApp extends React.Component {
   constructor(){
     super()
     this.state = {
-      dreams:[]
+      dreams:[],
+      lucid: [],
+      nightmare: [],
+      recurring: [],
+      strange: [],
+      vivid: []
     }
   }
+  //GET ALL DREAMS:
   getDataFromAPI=()=>{
     fetch("https://tranquil-harbor-57348.herokuapp.com/dreams")
     .then((res) => res.json())
@@ -28,19 +39,58 @@ class DreamApp extends React.Component {
     });
   }
 
-
-  //MOVE TO NEW COMPONENT?
+  //GET LUCID DREAMS:
   getLucidFromAPI=()=>{
     fetch("https://tranquil-harbor-57348.herokuapp.com/dreams/islucid?isLucid=true")
     .then((res) => res.json())
     .then((response)=>{
-      this.setState({dreams:response});
+      this.setState({lucid:response});
+    });
+  }
+
+  //GET NIGHTMARES:
+  getNightmareFromAPI=()=>{
+    fetch("https://tranquil-harbor-57348.herokuapp.com/dreams/isnightmare?isNightmare=true")
+    .then((res) => res.json())
+    .then((response)=>{
+      this.setState({nightmare:response});
+    });
+  }
+
+   //GET RECURRING DREAMS:
+  getRecurringFromAPI=()=>{
+    fetch("https://tranquil-harbor-57348.herokuapp.com/dreams/isrecurring?isRecurring=true")
+    .then((res) => res.json())
+    .then((response)=>{
+      this.setState({recurring:response});
+    });
+  }
+
+   //GET STRANGE DREAMS:
+  getStrangeFromAPI=()=>{
+    fetch("https://tranquil-harbor-57348.herokuapp.com/dreams/isstrange?isStrange=true")
+    .then((res) => res.json())
+    .then((response)=>{
+      this.setState({strange:response});
+    });
+  }
+
+   //GET VIVID DREAMS:
+  getVividFromAPI=()=>{
+    fetch("https://tranquil-harbor-57348.herokuapp.com/dreams/isvivid?isVivid=true")
+    .then((res) => res.json())
+    .then((response)=>{
+      this.setState({vivid:response});
     });
   }
 
   componentDidMount(){
     this.getDataFromAPI();
-    //this.getLucidFromAPI()
+    this.getLucidFromAPI();
+    this.getNightmareFromAPI();
+    this.getRecurringFromAPI();
+    this.getStrangeFromAPI();
+    this.getVividFromAPI();
   }
 
   render() {
@@ -49,14 +99,26 @@ class DreamApp extends React.Component {
       <div>
         <nav>
           <ul>
-            <li> 
+            {/*<li> 
               <img id="bed-icon" src={bedIcon} alt={"Icon"} style={{width: "26px", height: "26px"}}/>
-            </li>
+            </li>*/}
             <li>
               <Link id="show_dreams" className="nav-item" to="/">All Dreams</Link>
             </li>
             <li>
              <Link id="show_lucid" className="nav-item" to="/lucid">Lucid Dreams</Link>
+            </li>
+            <li>
+             <Link id="show_nightmare" className="nav-item" to="/nightmare">Nightmares</Link>
+            </li>
+            <li>
+             <Link id="show_recurring" className="nav-item" to="/recurring">Recurring Dreams</Link>
+            </li>
+            <li>
+            <Link id="show_strange" className="nav-item" to="/strange">Strange Dreams</Link>
+            </li>
+             <li>
+            <Link id="show_vivid" className="nav-item" to="/vivid">Vivid Dreams</Link>
             </li>
             <li>
               <Link id="create_dream" className="nav-item" to="/create">Add New Dream</Link>
@@ -79,7 +141,19 @@ class DreamApp extends React.Component {
             <App getDataFromAPI={this.getDataFromAPI} dreams={this.state.dreams}/>
           </Route>
           <Route path="/lucid">
-            <App getDataFromAPI={this.getLucidFromAPI} dreams={this.state.dreams}/>
+            <Lucid getDataFromAPI={this.getLucidFromAPI} lucidDreams={this.state.lucid}/>
+          </Route>
+          <Route path="/nightmare">
+            <Nightmare getNightmareFromAPI={this.getNightmareFromAPI} nightmares={this.state.nightmare}/>
+          </Route>
+          <Route path="/recurring">
+            <Recurring getRecurringFromAPI={this.getRecurringFromAPI} recurring={this.state.recurring}/>
+          </Route>
+          <Route path="/strange">
+            <Strange getStrangeFromAPI={this.getStrangeFromAPI} strange={this.state.strange}/>
+          </Route>
+          <Route path="/vivid">
+            <Vivid getVivdFromAPI={this.getVividFromAPI} vivid={this.state.vivid}/>
           </Route>
         </Switch>
         </div>

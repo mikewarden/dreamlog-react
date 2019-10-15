@@ -158,7 +158,11 @@ class DreamForm extends React.Component {
         <br/>
         <TextField id="outlined-name" label="Description" className="" onInput={this.onBodyInput} margin="normal" variant="outlined" />
         <br/>
-        <TextField id="outlined-name" label="Date" className="" onInput={this.onDateInput} margin="normal" variant="outlined" />
+        {/*<TextField id="outlined-name" label="" className="" onInput={this.onDateInput} margin="normal" variant="outlined" type="date" />*/}
+
+        <TextField id="date" label="Date of Dream" type="date"
+        defaultValue="2019-10-21" onInput={this.onDateInput}  InputLabelProps={{shrink: true,}} margin="normal" variant="outlined"/>
+
         <div className="radio-inputs">
         {/*<input onInput={this.onLucidChecked} type="checkbox" name="lucid" value="lucid"/>  Lucid <br/>*/}
         <Checkbox onInput={this.onLucidChecked} value="lucid" name="lucid"/> Lucid

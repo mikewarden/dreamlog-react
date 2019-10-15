@@ -12,7 +12,7 @@ class Nightmare extends React.Component {
 
   render() {
     let nightmareArray = this.props.nightmares.map((dream) => {
-      return (<Link to={"/dream/" + dream.id}  key={dream.id} className="list-container"><div className="item-container"><strong>Id:</strong> {dream.id} <br/><strong>Name:</strong> {dream.name} <br/><hr/><strong>Title:</strong> {dream.title} <br/> <hr/><strong>Description:</strong> {dream.body} <br/><hr/> <strong>Date:</strong> {dream.date} <br/></div><br/></Link>
+      return (<Link to={"/dream/" + dream.id}  key={dream.id} className="list-container"><div className="item-container">{/*<strong>Id:</strong> {dream.id} <br/>*/}<strong>Name:</strong> {dream.name} <br/><hr/><strong>Title:</strong> {dream.title} <br/> {/*<hr/><strong>Description:</strong> {dream.body} <br/><hr/> <strong>Date:</strong> {dream.date}<br/>*/}</div><br/></Link>
         )
     })
      let messageIfEmpty="";

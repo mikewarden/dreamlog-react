@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
 body {
  /* background: rgb(2,0,36);*/
-background: rgb(238,174,202);
-background: linear-gradient(90deg, rgba(238,174,202,1) 4%, rgba(148,187,233,1) 96%);
+/*background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 4%, rgba(148,187,233,1) 96%);*/
+background: url("sky2.jpg");
+background-repeat: no-repeat;
 font-family: 'Cairo', sans-serif;
 }
 

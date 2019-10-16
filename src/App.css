@@ -4,7 +4,7 @@ body {
  /* background: rgb(2,0,36);*/
 /*background: rgb(238,174,202);
 background: linear-gradient(90deg, rgba(238,174,202,1) 4%, rgba(148,187,233,1) 96%);*/
-background: url("sky2.jpg");
+background: url("sky4.jpg");
 background-repeat: no-repeat;
 font-family: 'Cairo', sans-serif;
 }
@@ -40,10 +40,10 @@ h2 {
 
 .item-container {
   border: 1px  solid #000;
-  border-radius: 8px;
-  width: 95%;
+  /*border-radius: 8px;*/
+  width: 65%;
   padding: 1%;
-  margin-left: 2%;
+  margin-left: 16%;
   margin-right: 2%;
   background-color: transparent;
   opacity: 0.8;
@@ -145,7 +145,7 @@ nav {
   margin-bottom: 5%;
   box-shadow: 0px 1px 8px 0px;
   padding: 1px;
-  border-radius: 8px;
+  /*border-radius: 8px;*/
 }
 
 .title-field {
@@ -194,7 +194,7 @@ hr {
   border: 1px solid #000;
   margin-right: 4%;
   padding: 2%;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   box-shadow: 4px 4px 10px;
 }
 

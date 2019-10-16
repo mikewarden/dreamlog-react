@@ -45,8 +45,8 @@ class Dream extends React.Component {
           <div className="dream-profile-data"><strong>Description:</strong> {this.state.dream.body}</div>
           <hr/>
           <div className="dream-profile-data"><strong>Date:</strong> {this.state.dream.date}</div>
-          <hr/>
-          <Rating />
+          {/*<hr/>
+                    <Rating />*/}
         </div>
         <Link to="/" className="delete-dream"><Button className="submit-btn" onClick={()=>this.deleteHandleClick(this.state.dream.id)} variant="outlined" color="inherit">Delete Dream</Button></Link>
         <Link to={"/edit/dream/" + this.state.dream.id} className="edit-dream"><Button className="submit-btn" variant="outlined" color="inherit">Edit</Button></Link>

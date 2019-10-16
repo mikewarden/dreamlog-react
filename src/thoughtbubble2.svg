@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3744" viewBox="0 0 177.32 149.96" version="1.0">
+  <path id="path4006" stroke-linejoin="round" d="m18.001 78.691c-9.5966 8.997-3.358 41.389 26.632 23.029 2.88 51.59 53.264 17.52 50.025 4.68 18.232 32.39 42.232 2.16 41.752-9.715 44.74 13.915 34.07-62.861 5.75-43.547 0.12-29.271-21.35-35.869-35.27-25.192-6.71-28.192-27.107-38.748-39.583 2.879-17.755-2.999-33.35 10.917-32.75 26.632-28.672-41.028-45.107 35.629-16.556 21.234z" stroke="#000" stroke-linecap="round" stroke-width="6.25" fill="none"/>
+  <path id="path4629" stroke-linejoin="round" d="m354.49 349.85a5.3984 4.6786 0 1 1 -10.79 0 5.3984 4.6786 0 1 1 10.79 0z" fill-rule="evenodd" stroke-dashoffset=".625" transform="matrix(1.3133 0 0 1.0038 -340.94 -209.51)" stroke="#000" stroke-linecap="round" stroke-width="6.25"/>
+  <path id="path4630" stroke-linejoin="round" d="m382.92 342.66a4.6786 2.8791 0 1 1 -9.35 0 4.6786 2.8791 0 1 1 9.35 0z" stroke-dashoffset=".625" transform="translate(-230.32 -204.94)" stroke="#000" stroke-linecap="round" stroke-width="6.25" fill="none"/>
+  <path id="path4631" stroke-linejoin="round" d="m404.52 340.68a2.3393 1.6195 0 1 1 -4.68 0 2.3393 1.6195 0 1 1 4.68 0z" stroke-dashoffset=".625" transform="translate(-230.32 -204.94)" stroke="#000" stroke-linecap="round" stroke-width="6.25" fill="none"/>
+  <path id="path5253" stroke-linejoin="round" d="m118.05 38.743c9.72 0.72 10.44 12.596 7.92 21.593" stroke="#000" stroke-linecap="round" stroke-width="6.25" fill="none"/>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Cloud</dc:title>
+        <dc:date>2009-04-04T07:03:21</dc:date>
+        <dc:description>White cloud by Guillaume Boitel. From old OCAL site.</dc:description>
+        <dc:source>http://openclipart.org/detail/24024/cloud-by-anonymous-24024</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Anonymous</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>callout</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>cloud</rdf:li>
+            <rdf:li>comic</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>svg</rdf:li>
+            <rdf:li>symbol</rdf:li>
+            <rdf:li>weather</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -4,7 +4,7 @@ body {
  /* background: rgb(2,0,36);*/
 /*background: rgb(238,174,202);
 background: linear-gradient(90deg, rgba(238,174,202,1) 4%, rgba(148,187,233,1) 96%);*/
-background: url("sky4.jpg");
+background: url("sky2.jpg");
 background-repeat: no-repeat;
 font-family: 'Cairo', sans-serif;
 }
@@ -50,6 +50,8 @@ h2 {
   position: relative;
   font-size: 18px;
 }
+
+
 
 .form {
   text-align: center;
@@ -225,4 +227,9 @@ p {
   font-family: 'Cairo', sans-serif;
   font-size: 16px;
   margin-left: 2%;
+  text-align: center;
+}
+
+#svg-container {
+  text-align: center;
 }

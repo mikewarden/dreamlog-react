@@ -6,6 +6,8 @@ import DreamForm from './DreamForm';
 import Rating from './Rating';
 import Dragula from 'react-dragula';
 import Button from '@material-ui/core/Button';
+import pencil1 from './pencil1.svg';
+import thoughtbubble2 from './thoughtbubble2.svg';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Dream extends React.Component {
@@ -34,6 +36,10 @@ class Dream extends React.Component {
  render(){
     return(
       <div id="dream-profile">
+      <div id="svg-container">
+    <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    </div>
       <h1>DreamLog</h1>
         <div id="dream-body">
           <div className="dream-profile-data"><strong>Id:</strong> {this.state.dream.id}</div>

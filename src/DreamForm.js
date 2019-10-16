@@ -3,6 +3,8 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
+import pencil1 from './pencil1.svg';
+import thoughtbubble2 from './thoughtbubble2.svg';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class DreamForm extends React.Component {
@@ -151,7 +153,10 @@ class DreamForm extends React.Component {
     }
     return (
      <div className="form">
-      <h3>Log a new Dream</h3>
+      <div id="svg-container">
+    <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    </div>
         <TextField id="outlined-name" label="User Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
         <br/>
         <TextField id="outlined-name" label="Dream Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />

@@ -6,6 +6,8 @@ import DreamForm from './DreamForm';
 import Dragula from 'react-dragula';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import pencil1 from './pencil1.svg';
+import thoughtbubble2 from './thoughtbubble2.svg';
 
 class Strange extends React.Component {
   
@@ -25,7 +27,11 @@ class Strange extends React.Component {
     
     
     <div className="App">
-      <h1>DreamLog: Strange Dreams</h1>
+    <div id="svg-container">
+    <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    </div>
+      <h1>Strange Dreams</h1>
     
         <div id="strange">
         {messageIfEmpty}

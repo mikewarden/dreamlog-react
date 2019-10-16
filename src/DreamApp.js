@@ -15,13 +15,18 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
-import bedIcon from './bed.svg';
+import pencil1 from './pencil1.svg';
+import thoughtbubble2 from './thoughtbubble2.svg';
 
 
 const About=()=>{
   return (
     <div id="about-container">
-    <h2>About DreamLog</h2>
+     <div id="svg-container">
+    <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    </div>
+    <h1>About DreamLog</h1>
     <p>Welcome to DreamLog!</p>
     </div>
     )

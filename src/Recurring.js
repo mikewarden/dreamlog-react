@@ -6,6 +6,8 @@ import DreamForm from './DreamForm';
 import Dragula from 'react-dragula';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import pencil1 from './pencil1.svg';
+import thoughtbubble2 from './thoughtbubble2.svg';
 
 class Recurring extends React.Component {
   
@@ -26,7 +28,11 @@ class Recurring extends React.Component {
     
     
     <div className="App">
-      <h1>DreamLog: Recurring Dreams</h1>
+    <div id="svg-container">
+    <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
+    </div>
+      <h1>Recurring Dreams</h1>
     
         <div id="recurring">
         {messageIfEmpty}

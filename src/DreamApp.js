@@ -27,7 +27,7 @@ const About=()=>{
     <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
     </div>
     <h1>About DreamLog</h1>
-    <p>Welcome to DreamLog!</p>
+    <p>Dreams- we all have them. While deep in the abyss of the minds eye, we encounter the strangest things. These things are often so weird that they challenge our perceptions well into the waking state. However as we burst into this reality, the memory of these strange events become foggy. One feels compelled to write down such events, but might be comprimised by a phenomenon known as 'morning hands', where its difficult to make a fist, let alone hold a pen. That's where DreamLog comes in. After battling the creatures of the abyss or confronting the unknown, one can simply type out the recollection of a dream into that trusty device within meer inches of reach. One can also look at the dreams of others, and filter through different types of dreams, like nightmares, or recurring dreams and see what's going on in the collective ether facilitated in dream-sleep. Had a crazy dream? Log it to DreamLog and share your dreams with the world! </p>
     </div>
     )
 }

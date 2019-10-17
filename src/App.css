@@ -39,7 +39,7 @@ h2 {
 
 .item-container {
   border: 1px  solid #000;
-  /*border-radius: 8px;*/
+  border-radius: 8px;
   width: 75%;
   padding: 1%;
   margin-left: 10%;
@@ -61,7 +61,7 @@ h2 {
 
 .text-field {
   margin-bottom: 1%;
-  /*border-radius: 10px;*/
+  border-radius: 10px;
   border-width: 3px;
  
  /* width: 25%;
@@ -195,7 +195,7 @@ hr {
   border: 1px solid #000;
   margin-right: 4%;
   padding: 2%;
-  /*border-radius: 10px;*/
+  border-radius: 10px;
   box-shadow: 4px 4px 10px;
 }
 

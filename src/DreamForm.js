@@ -105,6 +105,19 @@ class DreamForm extends React.Component {
   }
 
   handleUpdateClick = (event) => {
+
+    this.setState({
+        id: this.state.id,
+        name: this.state.name,
+        title: this.state.title, 
+        body: this.state.body,
+        date: this.state.date,
+        isLucid: this.state.isLucid,
+        isNightmare: this.state.isNightmare,
+        isRecurring: this.state.isRecurring,
+        isStrange: this.state.isStrange,
+        isVivid: this.state.isVivid,
+      });
     
     fetch('https://tranquil-harbor-57348.herokuapp.com/dream/' + this.state.id, {
       method: 'put',
@@ -124,18 +137,7 @@ class DreamForm extends React.Component {
       })
     }).then(() => {
       this.props.getDataFromAPI();
-      // this.setState({
-      // id:0,
-      // name: "",
-      // title: "",
-      // body: "",
-      // date: "",
-      // isLucid: false,
-      // isNightmare: false,
-      // isRecurring: false,
-      // isStrange: false,
-      // isVivid: false,
-      // });
+      
     })
   }
 

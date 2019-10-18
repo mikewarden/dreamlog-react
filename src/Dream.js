@@ -42,8 +42,6 @@ class Dream extends React.Component {
     </div>
       <h1>DreamLog</h1>
         <div id="dream-body">
-          <div className="dream-profile-data"><strong>Id:</strong> {this.state.dream.id}</div>
-          <hr/>
           <div className="dream-profile-data"><strong>Name:</strong> {this.state.dream.name}</div>
           <hr/>
           <div className="dream-profile-data"><strong>Title:</strong> {this.state.dream.title}</div>

@@ -47,7 +47,7 @@ class App extends React.Component {
      <h1>DreamLog</h1>
     <div id="container">
         <h5>{messageIfEmpty}</h5>
-        <div className='container' ref={this.dragulaDecorator}>{dreamArray}</div>
+        <div className='container'>{dreamArray}</div>
         </div>
         <footer>Developed by Mike Warden.</footer>
     </div>

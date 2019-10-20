@@ -35,20 +35,26 @@ h2 {
 .list-container {
   text-decoration: none;
   color: #000;
+   
+
 }
 
 .item-container {
   border: 1px  solid #000;
   border-radius: 8px;
   width: 75%;
-  padding: 1%;
+  padding: 0.3%;
+  padding-left: 1%;
   margin-left: 10%;
   margin-right: 2%;
+  margin-bottom: 4%;
   background-color: transparent;
   opacity: 0.8;
   box-shadow: 5px 3px 8px;
   position: relative;
   font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -236,3 +242,27 @@ p {
   padding: 1px 2.5px;*/
 }
 
+footer {
+  text-align: center;
+}
+
+#nav-line {
+  width: 100%;
+  box-shadow: 2px 2px 5px;
+}
+
+#span1 {
+margin-left: 8%;
+
+}
+
+h5 {
+  text-align: center;
+}
+
+.vl {
+  margin-left: 5%;
+  border-right: 2px solid #000;
+  
+  margin-right: 4%;
+}

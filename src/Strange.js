@@ -14,7 +14,7 @@ class Strange extends React.Component {
 
   render() {
     let strangeArray = this.props.strange.map((dream) => {
-      return (<Link to={"/dream/" + dream.id}  key={dream.id} className="list-container"><div className="item-container">{/*<strong>Id:</strong> {dream.id} <br/>*/}<strong>Name:</strong> {dream.name} <br/><hr/><strong>Title:</strong> {dream.title} <br/> {/*<hr/><strong>Description:</strong> {dream.body} <br/><hr/> <strong>Date:</strong> {dream.date}<br/>*/}</div><br/></Link>
+      return (<Link to={"/dream/" + dream.id}  key={dream.id} className="list-container"><div className="item-container">{/*<strong>Id:</strong> {dream.id} <br/>*/}<strong>Name:</strong> {dream.name}<span className="vl"></span><span></span> <strong>Title:</strong> {dream.title} <br/> {/*<hr/><strong>Description:</strong> {dream.body} <br/><hr/> <strong>Date:</strong> {dream.date}<br/>*/}</div></Link>
         )
     })
      let messageIfEmpty="";
@@ -37,7 +37,7 @@ class Strange extends React.Component {
         {messageIfEmpty}
         <div className='container' ref={this.dragulaDecorator}>{strangeArray}</div>
         </div>
-        
+        <footer>Developed by Mike Warden.</footer>
     </div>
   );
   }

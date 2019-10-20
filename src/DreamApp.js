@@ -114,6 +114,9 @@ class DreamApp extends React.Component {
       <div>
         <nav>
           <ul>
+          <li>
+              <Link id="show_dreams" className="nav-item" to="/">ALL DREAMS</Link>
+            </li>
             {/*<li> 
               <img id="bed-icon" src={bedIcon} alt={"Icon"} style={{width: "26px", height: "26px"}}/>
             </li>*/}
@@ -123,9 +126,7 @@ class DreamApp extends React.Component {
             <li>
               <Link id="show_dreams" className="nav-item" to="/about">ABOUT</Link>
             </li>
-            <li>
-              <Link id="show_dreams" className="nav-item" to="/">ALL DREAMS</Link>
-            </li>
+            
             {/*<li>
                          <Link id="show_lucid" className="nav-item" to="/lucid">Lucid Dreams</Link>
                         </li>
@@ -144,8 +145,10 @@ class DreamApp extends React.Component {
             <li>
               <Link id="create_dream" className="nav-item" to="/create">ADD NEW DREAM</Link>
             </li>
-            <li></li>
+            
           </ul>
+          <hr id="nav-line"/>
+
         </nav>
 
 

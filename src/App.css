@@ -252,9 +252,7 @@ h5 {
   text-align: center;
 }
 
-/*.vl {
-  margin-left: 2%;
-  border-right: 2px solid #000;
-  
-  margin-right: 1%;
-}*/
+#footer-link {
+  text-decoration: none;
+  color: #000;
+}

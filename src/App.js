@@ -49,7 +49,7 @@ class App extends React.Component {
         <h5>{messageIfEmpty}</h5>
         <div className='container'>{dreamArray}</div>
         </div>
-        <footer>Developed by Mike Warden.</footer>
+        <footer>Developed by Mike Warden.<br/> <a id="footer-link" href="mailto:mikewarden@mikewarden.com">mikewarden@mikewarden.com</a></footer>
     </div>
   );
   }

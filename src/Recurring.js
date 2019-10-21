@@ -38,7 +38,7 @@ class Recurring extends React.Component {
         {messageIfEmpty}
         <div className='container' ref={this.dragulaDecorator}>{recurringArray}</div>
         </div>
-        <footer>Developed by Mike Warden.</footer>
+        <footer>Developed by Mike Warden.<br/> <a id="footer-link" href="mailto:mikewarden@mikewarden.com">mikewarden@mikewarden.com</a></footer>
     </div>
   );
   }

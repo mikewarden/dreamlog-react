@@ -125,34 +125,14 @@ class DreamApp extends React.Component {
             </li>
             <li>
               <Link id="show_dreams" className="nav-item" to="/about">ABOUT</Link>
-            </li>
-            
-            {/*<li>
-                         <Link id="show_lucid" className="nav-item" to="/lucid">Lucid Dreams</Link>
-                        </li>
-                        <li>
-                         <Link id="show_nightmare" className="nav-item" to="/nightmare">Nightmares</Link>
-                        </li>
-                        <li>
-                         <Link id="show_recurring" className="nav-item" to="/recurring">Recurring Dreams</Link>
-                        </li>
-                        <li>
-                        <Link id="show_strange" className="nav-item" to="/strange">Strange Dreams</Link>
-                        </li>
-                         <li>
-                        <Link id="show_vivid" className="nav-item" to="/vivid">Vivid Dreams</Link>
-                        </li>*/}
+            </li>                        
             <li>
               <Link id="create_dream" className="nav-item" to="/create">ADD NEW DREAM</Link>
-            </li>
-            
+            </li>         
           </ul>
-          <hr id="nav-line"/>
-
         </nav>
 
-
-        <div id="content_body">
+       <div id="content_body">
         <Switch>
           <Route path="/dream/:id" render={(props)=> (
             <Dream {...props} getDataFromAPI={this.getDataFromAPI}/>

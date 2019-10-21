@@ -187,7 +187,10 @@ class DreamForm extends React.Component {
         <br/>
         {/*
         <Button onClick={this.handleCreateClick}variant="outlined" color="inherit">Submit</Button>*/}
-         <Link to="/" className="submit-btn">{ buttonAction }</Link>     
+         <Link to="/" className="submit-btn">{ buttonAction }</Link>
+         <br/>
+         <br/>
+         <footer>Developed by Mike Warden.<br/> <a id="footer-link" href="mailto:mikewarden@mikewarden.com">mikewarden@mikewarden.com</a></footer>     
       </div>
     )
   }

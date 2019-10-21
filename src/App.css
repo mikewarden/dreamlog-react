@@ -49,7 +49,7 @@ h2 {
   background-color: transparent;
   opacity: 0.8;
   box-shadow: 5px 3px 8px;
-  /*position: relative;*/
+  overflow: hidden;
   font-size: 18px;
   
 }
@@ -255,4 +255,8 @@ h5 {
 #footer-link {
   text-decoration: none;
   color: #000;
+}
+
+#text-span {
+  margin-left: 2%;
 }

@@ -20,7 +20,9 @@ class DreamForm extends React.Component {
       isNightmare: false,
       isRecurring: false,
       isStrange: false,
-      isVivid: false
+      isVivid: false,
+      password: "phantomBlueCrust",
+      userAttempt: ""
     }
   }
 
@@ -42,6 +44,10 @@ class DreamForm extends React.Component {
   onDateInput = (event) => {
     this.setState({date: event.target.value})
     console.log("Date: " + event.target.value);
+  }
+
+  onPasswordInput = (event) => {
+    this.setState({userAttempt: event.target.value})
   }
 
   onLucidChecked = (event) => {
@@ -70,37 +76,41 @@ class DreamForm extends React.Component {
   }
 
   handleCreateClick = (event) => {
-    fetch('https://tranquil-harbor-57348.herokuapp.com/dream', {
-      method: 'post',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        title: this.state.title, 
-        body: this.state.body,
-        date: this.state.date,
-        isLucid: this.state.isLucid,
-        isNightmare: this.state.isNightmare,
-        isRecurring: this.state.isRecurring,
-        isStrange: this.state.isStrange,
-        isVivid: this.state.isVivid
+    if (this.state.userAttempt === this.state.password) {
+      fetch('https://tranquil-harbor-57348.herokuapp.com/dream', {
+        method: 'post',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          title: this.state.title, 
+          body: this.state.body,
+          date: this.state.date,
+          isLucid: this.state.isLucid,
+          isNightmare: this.state.isNightmare,
+          isRecurring: this.state.isRecurring,
+          isStrange: this.state.isStrange,
+          isVivid: this.state.isVivid
+        })
+      }).then(() => {
+        this.props.getDataFromAPI();
+        this.setState({
+        name: "",
+        title: "",
+        body: "",
+        date: "",
+        isLucid: false,
+        isNightmare: false,
+        isRecurring: false,
+        isStrange: false,
+        isVivid: false,
+        })
       })
-    }).then(() => {
-      this.props.getDataFromAPI();
-      this.setState({
-      name: "",
-      title: "",
-      body: "",
-      date: "",
-      isLucid: false,
-      isNightmare: false,
-      isRecurring: false,
-      isStrange: false,
-      isVivid: false,
-      })
-    })
-    
+    } else {
+      console.log("wrong password");
+      alert("Wrong Password, try again.")
+    }
     // window.location.reload();
   }
 
@@ -137,7 +147,6 @@ class DreamForm extends React.Component {
       })
     }).then(() => {
       this.props.getDataFromAPI();
-      
     })
   }
 
@@ -159,34 +168,31 @@ class DreamForm extends React.Component {
     <img id="thought-bubble" src={thoughtbubble2} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
     <img id="pencil-icon" src={pencil1} alt={"Icon"} style={{width: "60px", height: "60px"}}/>
     </div>
-        <TextField id="outlined-name" label="User Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
+        <TextField label="User Name" className="name-field" onInput={this.onNameInput} margin="normal" variant="outlined" />
         <br/>
-        <TextField id="outlined-name" label="Dream Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />
+        <TextField label="Dream Title" className="title-field" onInput={this.onTitleInput} margin="normal" variant="outlined" />
         <br/>
-        <TextField id="outlined-name" label="Description" className="" onInput={this.onBodyInput} margin="normal" variant="outlined" />
+        <TextField label="Description" className="" onInput={this.onBodyInput} margin="normal" variant="outlined" />
         <br/>
-        {/*<TextField id="outlined-name" label="" className="" onInput={this.onDateInput} margin="normal" variant="outlined" type="date" />*/}
-
+        <TextField label="Password" className="" onInput={this.onPasswordInput} margin="normal" variant="outlined" type="password" />
+        <br/>
         <TextField id="date" label="Date of Dream" type="date"
         defaultValue="2019-10-21" onInput={this.onDateInput}  InputLabelProps={{shrink: true,}} margin="normal" variant="outlined"/>
 
         <div className="radio-inputs">
-        {/*<input onInput={this.onLucidChecked} type="checkbox" name="lucid" value="lucid"/>  Lucid <br/>*/}
-        <Checkbox onInput={this.onLucidChecked} value="lucid" name="lucid"/> Lucid
-        {/*<input onInput={this.onNightmareChecked} type="checkbox" name="nightmare" value="nightmare"/>  Nightmare <br/>*/}
-        <Checkbox onInput={this.onNightmareChecked} value="nightmare" name="nightmare"/> Nightmare
-        {/*<input onInput={this.onRecurringChecked} type="checkbox" name="recurring" value="recurring"/>  Recurring <br/>*/}
-        <Checkbox onInput={this.onRecurringChecked} value="recurring" name="recurring"/> Recurring<br/>
-        {/*<input onInput={this.onStrangeChecked} type="checkbox" name="strange" value="strange"/>  Strange <br/>*/}
-        <Checkbox onInput={this.onStrangeChecked} value="strange" name="strange"/> Strange
-        {/*<input onInput={this.onVividChecked} type="checkbox" name="vivid" value="vivid"/>  Vivid <br/>*/}
+          <Checkbox onInput={this.onLucidChecked} value="lucid" name="lucid"/> Lucid
+      
+          <Checkbox onInput={this.onNightmareChecked} value="nightmare" name="nightmare"/> Nightmare
+        
+          <Checkbox onInput={this.onRecurringChecked} value="recurring" name="recurring"/> Recurring<br/>
+      
+          <Checkbox onInput={this.onStrangeChecked} value="strange" name="strange"/> Strange
 
-        <Checkbox onInput={this.onVividChecked} value="vivid" name="vivid"/> Vivid
+          <Checkbox onInput={this.onVividChecked} value="vivid" name="vivid"/> Vivid
 
         </div>
         <br/>
-        {/*
-        <Button onClick={this.handleCreateClick}variant="outlined" color="inherit">Submit</Button>*/}
+       
          <Link to="/" className="submit-btn">{ buttonAction }</Link>
          <br/>
          <br/>

@@ -21,7 +21,7 @@ class DreamForm extends React.Component {
       isRecurring: false,
       isStrange: false,
       isVivid: false,
-      password: "phantomBlueCrust",
+      password: "password",
       userAttempt: ""
     }
   }
